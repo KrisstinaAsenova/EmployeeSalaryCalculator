@@ -1,0 +1,2 @@
+2020-02-12 00:30:56.452 +02:00 [INF] Starting web host
+2020-02-12 00:31:34.436 +02:00 [INF] Entered gross salary

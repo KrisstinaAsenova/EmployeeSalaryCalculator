@@ -8,10 +8,13 @@
 
 
   <ItemGroup>
+    <PackageReference Include="EPPlus" Version="4.5.3" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Azure.Amqp" Version="2.4.3" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
     <PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
+    <PackageReference Include="System.Text.Encodings.Web" Version="4.7.0" />
   </ItemGroup>
 
 
