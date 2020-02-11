@@ -1,0 +1,47 @@
+﻿body {
+    background-image: url('../images/salary.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow-x: hidden;
+}
+
+/*scroll {
+    overflow-x: hidden;
+}*/
+
+.text-design {
+    text-align: right; 
+    margin-right: 1% !important;
+    padding-top:7%;
+}
+
+.text-design-body {
+    text-align: right;
+    margin-right: 1% !important;
+    padding-top: 7%;
+}
+
+.pt {
+    padding-top: 8%;
+}
+
+.space
+{
+    margin-right: 5%;
+}
+
+.tile_div a {
+    width:90px;
+    display: inline-block;
+    float: right;
+    font-weight: 400;
+    text-align: center;
+}
+
+.title_div a.last {
+    margin-right: 0;
+}
+
+.clear {
+    clear: both;
+}

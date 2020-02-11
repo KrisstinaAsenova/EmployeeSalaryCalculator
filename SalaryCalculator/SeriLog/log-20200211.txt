@@ -1,0 +1,53 @@
+2020-02-11 20:07:09.956 +02:00 [INF] Starting web host
+2020-02-11 20:08:20.333 +02:00 [INF] Starting web host
+2020-02-11 20:10:12.178 +02:00 [INF] Starting web host
+2020-02-11 20:10:19.495 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'SalaryCalculator.Services.Contracts.IValidator' while attempting to activate 'SalaryCalculator.Services.Services.BulgariaService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.CreateServiceAccessor(Type serviceType)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-02-11 20:11:32.056 +02:00 [INF] Starting web host
+2020-02-11 20:11:45.204 +02:00 [INF] User logged in.
+2020-02-11 20:12:32.271 +02:00 [INF] Starting web host
+2020-02-11 20:12:38.152 +02:00 [INF] User logged out.
+2020-02-11 20:13:18.607 +02:00 [INF] Starting web host
+2020-02-11 20:16:35.618 +02:00 [INF] Starting web host
+2020-02-11 20:18:26.235 +02:00 [INF] Starting web host
+2020-02-11 20:22:12.584 +02:00 [INF] Starting web host
+2020-02-11 20:27:23.335 +02:00 [INF] Starting web host
+2020-02-11 20:27:38.360 +02:00 [INF] Entered gross salary
+2020-02-11 20:28:26.412 +02:00 [INF] User logged in.
+2020-02-11 20:35:13.359 +02:00 [INF] Starting web host
+2020-02-11 20:35:20.736 +02:00 [INF] User logged out.
+2020-02-11 20:35:34.049 +02:00 [INF] Entered gross salary
+2020-02-11 20:36:39.855 +02:00 [INF] Starting web host
+2020-02-11 20:36:54.444 +02:00 [INF] User logged in.
+2020-02-11 20:39:54.294 +02:00 [INF] Starting web host
+2020-02-11 20:49:08.217 +02:00 [INF] Starting web host
+2020-02-11 20:49:25.849 +02:00 [INF] Entered gross salary
+2020-02-11 20:49:34.078 +02:00 [INF] User logged in.

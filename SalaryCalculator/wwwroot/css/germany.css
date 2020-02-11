@@ -1,0 +1,6 @@
+﻿body {
+    background-image: url('../images/german.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow-x: hidden;
+}
