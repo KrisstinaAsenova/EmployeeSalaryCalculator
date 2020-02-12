@@ -8,6 +8,7 @@ namespace SalaryCalculator.Data.Models
 {
     public class BulgarianSalary
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public Guid SalaryId { get; set; }
 
         [EmailAddress]
@@ -41,8 +42,6 @@ namespace SalaryCalculator.Data.Models
         [Column(TypeName = "decimal(18,2)")]
         public decimal PersonalIncomeTax { get; set; }
 
-
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public string UserId { get; set; }
         public User User { get; set; }
 

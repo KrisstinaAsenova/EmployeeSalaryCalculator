@@ -27,6 +27,7 @@ namespace SalaryCalculator.Controllers
             this.context = context;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             var salaryList = this.context
@@ -59,7 +60,8 @@ namespace SalaryCalculator.Controllers
             ws.Cells["A1"].Value = "Email";
             ws.Cells["B1"].Value = "GrossSalary";
             ws.Cells["C1"].Value = "NetSalary";
-
+            ws.Cells["D1"].Value = "Date";
+            
             int rowStart = 2;
             foreach (var salary in salaryList)
             {
@@ -67,6 +69,7 @@ namespace SalaryCalculator.Controllers
                 ws.Cells[string.Format("A{0}", rowStart)].Value = salary.PersonEmail;
                 ws.Cells[string.Format("B{0}", rowStart)].Value = salary.GrossSalary;
                 ws.Cells[string.Format("C{0}", rowStart)].Value = salary.NetSalary;
+               // ws.Cells[string.Format("MM/dd/yyyy HH:mm")].Value = DateTime.Now;
                 rowStart++;
             }
 

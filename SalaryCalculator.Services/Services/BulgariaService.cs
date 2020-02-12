@@ -31,25 +31,25 @@ namespace SalaryCalculator.Services.Services
 
             var user = await this.userService.CreateUser(email);
 
-            var pensionTax = await this.GetPensionTax(grossSalary);
-            var healthTax = await this.GetHealthTax(grossSalary);
-            var unemploymentTax = await this.GetUnemploymentTax(grossSalary);
-            var commonTax = await this.GetCommonTax(grossSalary);
-            var supplementaryTax = await this.GetSupplementaryTax(grossSalary);
+            //var pensionTax = this.GetPensionTax(grossSalary);
+            //var healthTax = this.GetHealthTax(grossSalary);
+            //var unemploymentTax =this.GetUnemploymentTax(grossSalary);
+            //var commonTax = this.GetCommonTax(grossSalary);
+            //var supplementaryTax = this.GetSupplementaryTax(grossSalary);
 
-            var tax = pensionTax + healthTax + unemploymentTax + commonTax + supplementaryTax;
-            var personalTax = await this.GetPersonalIncomeTax(grossSalary, tax);
+            var tax = this.GetPensionTax(grossSalary) + this.GetHealthTax(grossSalary) + this.GetUnemploymentTax(grossSalary) + this.GetCommonTax(grossSalary) + this.GetSupplementaryTax(grossSalary);
+            var personalTax = this.GetPersonalIncomeTax(grossSalary, tax);
             var summary = grossSalary - tax + personalTax;
 
             var salary = new BulgarianSalary { 
                 PersonEmail = email,
                 GrossSalary= grossSalary,
-                Pensions =pensionTax,
+                //Pensions =pensionTax,
                 Tax = tax,
-                HealthSecurity =healthTax,
-                Unemployment= unemploymentTax,
-                Common = commonTax,
-                Supplementary= supplementaryTax,
+                //HealthSecurity =healthTax,
+                //Unemployment= unemploymentTax,
+                //Common = commonTax,
+                //Supplementary= supplementaryTax,
                 PersonalIncomeTax =personalTax,
                 NetSalary = summary,
                 UserId = user.Id
@@ -60,37 +60,37 @@ namespace SalaryCalculator.Services.Services
 
             return salary;
         }
-        public async Task<Decimal> GetPensionTax(decimal grossSalary)
+        private decimal GetPensionTax(decimal grossSalary)
         {
             this.validator.IsGrossSalaryInRange(grossSalary);
-            return grossSalary * ServicesConstants.PensionInsuranceInBulgaria;
+            return grossSalary * ServicesConstants.PensionsInBulgaria;
         }
 
-        public async Task<Decimal> GetHealthTax(decimal grossSalary)
+        private decimal GetHealthTax(decimal grossSalary)
         {
             this.validator.IsGrossSalaryInRange(grossSalary);
-            return grossSalary * ServicesConstants.HealthInsuranceInBulgaria;
+            return grossSalary * ServicesConstants.HealthSecurityInBulgaria;
         }
 
-        public async Task<Decimal> GetUnemploymentTax(decimal grossSalary)
+        private decimal GetUnemploymentTax(decimal grossSalary)
         {
             this.validator.IsGrossSalaryInRange(grossSalary);
-            return grossSalary * ServicesConstants.UnemploymentInsuranceInBulgaria;
+            return grossSalary * ServicesConstants.UnemploymentInBulgaria;
         }
 
-        public async Task<Decimal> GetSupplementaryTax(decimal grossSalary)
+        private decimal GetSupplementaryTax(decimal grossSalary)
         {
             this.validator.IsGrossSalaryInRange(grossSalary);
-            return grossSalary * ServicesConstants.SupplementaryInsuranceInBulgaria;
+            return grossSalary * ServicesConstants.SupplementaryPensionInBulgaria;
         }
 
-        public async Task<Decimal> GetCommonTax(decimal grossSalary)
+        private decimal GetCommonTax(decimal grossSalary)
         {
             this.validator.IsGrossSalaryInRange(grossSalary);
-            return grossSalary * ServicesConstants.CommonTaxInBulgaria;
+            return grossSalary * ServicesConstants.CommonDiseasesAndMaternityInBulgaria;
         }
 
-        public async Task<Decimal> GetPersonalIncomeTax(decimal grossSalary, decimal tax)
+        private decimal GetPersonalIncomeTax(decimal grossSalary, decimal tax)
         {
             this.validator.IsGrossSalaryInRange(grossSalary);
             return (grossSalary - tax)* ServicesConstants.PersonalIncomeTaxInBulgaria;
