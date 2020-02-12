@@ -716,3 +716,6 @@ Error Number:208,State:1,Class:16
 2020-02-12 14:08:17.840 +02:00 [INF] Entered gross salary
 2020-02-12 14:08:26.366 +02:00 [INF] User logged in.
 2020-02-12 14:08:28.144 +02:00 [INF] User logged out.
+2020-02-12 14:10:11.441 +02:00 [INF] Starting web host
+2020-02-12 14:10:25.587 +02:00 [INF] User logged in.
+2020-02-12 14:12:39.804 +02:00 [INF] Starting web host

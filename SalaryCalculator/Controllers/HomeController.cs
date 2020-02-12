@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -69,7 +70,9 @@ namespace SalaryCalculator.Controllers
                 ws.Cells[string.Format("A{0}", rowStart)].Value = salary.PersonEmail;
                 ws.Cells[string.Format("B{0}", rowStart)].Value = salary.GrossSalary;
                 ws.Cells[string.Format("C{0}", rowStart)].Value = salary.NetSalary;
-               // ws.Cells[string.Format("MM/dd/yyyy HH:mm")].Value = DateTime.Now;
+                ws.Row(rowStart).Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml(string.Format("pink")));
+
+                // ws.Cells[string.Format("MM/dd/yyyy HH:mm")].Value = DateTime.Now;
                 rowStart++;
             }
 
