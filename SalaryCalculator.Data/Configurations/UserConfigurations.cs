@@ -15,7 +15,7 @@ namespace SalaryCalculator.Data.Configurations
                 .HasKey(user => user.Id);
 
             builder
-                 .HasMany<BulgarianSalary>(user => user.Salaries)
+                 .HasMany<Salary>(user => user.Salaries)
                  .WithOne(s => s.User);
         }
     }

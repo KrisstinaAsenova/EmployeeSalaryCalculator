@@ -7,9 +7,9 @@ using System.Text;
 
 namespace SalaryCalculator.Data.Configurations
 {
-    internal class BulgariaSalaryConfigurations : IEntityTypeConfiguration<BulgarianSalary>
+    internal class SalaryConfigurations : IEntityTypeConfiguration<Salary>
     {
-        public void Configure(EntityTypeBuilder<BulgarianSalary> builder)
+        public void Configure(EntityTypeBuilder<Salary> builder)
         {
             builder
                  .HasKey(s => s.SalaryId);

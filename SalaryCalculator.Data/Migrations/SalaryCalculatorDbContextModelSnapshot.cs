@@ -9,7 +9,7 @@ using SalaryCalculator.Data;
 namespace SalaryCalculator.Data.Migrations
 {
     [DbContext(typeof(SalaryCalculatorDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    partial class SalaryCalculatorDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -46,7 +46,7 @@ namespace SalaryCalculator.Data.Migrations
                         new
                         {
                             Id = "93ad4deb-b9f7-4a98-9585-8b79963aee55",
-                            ConcurrencyStamp = "7481bc32-f2a0-45bc-9c10-dcf8cb013679",
+                            ConcurrencyStamp = "12aab883-7dee-4e6f-a4a7-37f0aebe8e70",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -149,38 +149,21 @@ namespace SalaryCalculator.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("SalaryCalculator.Data.Models.BulgarianSalary", b =>
+            modelBuilder.Entity("SalaryCalculator.Data.Models.Salary", b =>
                 {
-                    b.Property<Guid>("SalaryId")
-                        .ValueGeneratedOnAdd();
+                    b.Property<Guid>("SalaryId");
 
-                    b.Property<decimal>("Common")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<DateTime>("DateCheck");
 
                     b.Property<decimal>("GrossSalary")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("HealthSecurity")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("NetSalary")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal>("Pensions")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<string>("PersonEmail");
 
-                    b.Property<decimal>("PersonalIncomeTax")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("Supplementary")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<decimal>("Tax")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("Unemployment")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("UserId");
@@ -247,13 +230,13 @@ namespace SalaryCalculator.Data.Migrations
                         {
                             Id = "e05be19e-09ef-428c-9bcc-cf5ebdf7c56e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7aa48459-130d-439e-a56b-1b18b67d4941",
+                            ConcurrencyStamp = "36d00c56-c436-408b-ada1-3bdcdd9d3d6a",
                             Email = "admin@admin.com",
                             EmailConfirmed = false,
                             LockoutEnabled = true,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFXn9U+2NxO1IdZLG2eNG4sLx6P0uWGmv6tef5i5DNZw+dBepPK+Q1BmCTazpfwZQQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEI94pe5zpT57lN5KaVXG1CqsByVqJOAUJJvJZv5tXPO+xORjibvMOhYuZDar+VnXxg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "7I5VNHIJTSZNOT3KDWKNFUV5PVYBHGXN",
                             TwoFactorEnabled = false,
@@ -306,7 +289,7 @@ namespace SalaryCalculator.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("SalaryCalculator.Data.Models.BulgarianSalary", b =>
+            modelBuilder.Entity("SalaryCalculator.Data.Models.Salary", b =>
                 {
                     b.HasOne("SalaryCalculator.Data.Models.User", "User")
                         .WithMany("Salaries")

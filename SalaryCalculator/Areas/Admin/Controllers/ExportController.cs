@@ -16,11 +16,11 @@ namespace SalaryCalculator.Areas.Admin.Controllers
 {
     public class ExportController : Controller
     {
-        private readonly IBulgariaSalaryService salaryService;
+        private readonly ISalaryService salaryService;
         private readonly SalaryCalculatorDbContext context;
 
 
-        public ExportController(IBulgariaSalaryService salaryService, SalaryCalculatorDbContext context)
+        public ExportController(ISalaryService salaryService, SalaryCalculatorDbContext context)
         {
             this.salaryService = salaryService;
             this.context = context;

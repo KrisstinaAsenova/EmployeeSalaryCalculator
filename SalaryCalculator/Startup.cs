@@ -48,8 +48,7 @@ namespace SalaryCalculator
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddScoped<IUserService, UserService>();
-            services.AddScoped<IBulgariaSalaryService, BulgariaService>();
-            services.AddScoped<IExportService, ExportService>();
+            services.AddScoped<ISalaryService, SalaryService>();
             services.AddScoped<IValidator, Validator>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);

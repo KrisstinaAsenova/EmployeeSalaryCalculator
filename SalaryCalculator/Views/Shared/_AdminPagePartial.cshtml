@@ -1,25 +1,29 @@
 ﻿@model IEnumerable<SalaryCalculator.Web.Models.SalaryViewModel>
 
 <div class="container">
-    <table class="table table-responsive">
+    <table class="table">
         <thead>
             <tr>
                 <th>Email</th>
-                <th>GrossSalary</th>
-                <th>NetSalary</th>
+                <th>Gross Salary</th>
+                <th>Net Salary</th>
+                <th>DateTime</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var salary in Model)
             {
-                <tr>
-                    <td>@salary.PersonEmail</td>
-                    <td>@salary.GrossSalary</td>
-                    <td>@salary.NetSalary</td>
-                </tr>
+            <tr>
+                <td>@salary.PersonEmail</td>
+                <td>@salary.GrossSalary</td>
+                <td>@salary.NetSalary</td>
+                <td>@salary.DateCheck</td>
+            </tr>
             }
         </tbody>
     </table>
+</div>
+<div class="btn">
     <a href="@Url.Action("ExportToExcel", "Home")">Export Excel</a>
 </div>
 

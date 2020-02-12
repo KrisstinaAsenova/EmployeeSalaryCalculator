@@ -1,30 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OfficeOpenXml;
 using SalaryCalculator.Data;
-using SalaryCalculator.Models;
-using SalaryCalculator.Services.Contracts;
 using SalaryCalculator.Web.Models;
-using static Microsoft.AspNetCore.Hosting.Internal.HostingApplication;
 
 namespace SalaryCalculator.Controllers
 {
     public class HomeController : Controller
     {
-
-        private readonly IBulgariaSalaryService salaryService;
         private readonly SalaryCalculatorDbContext context;
 
-
-        public HomeController(IBulgariaSalaryService salaryService, SalaryCalculatorDbContext context)
+        public HomeController(SalaryCalculatorDbContext context)
         {
-            this.salaryService = salaryService;
             this.context = context;
         }
 
@@ -35,6 +24,7 @@ namespace SalaryCalculator.Controllers
                 .Salaries
                 .Select(x => new SalaryViewModel
                 {
+                    DateCheck = x.DateCheck,
                     PersonEmail = x.PersonEmail,
                     GrossSalary = x.GrossSalary,
                     NetSalary = x.NetSalary
@@ -49,6 +39,7 @@ namespace SalaryCalculator.Controllers
                 .Salaries
                 .Select(x => new SalaryViewModel
                 {
+                    DateCheck = x.DateCheck,
                     PersonEmail = x.PersonEmail,
                     GrossSalary = x.GrossSalary,
                     NetSalary = x.NetSalary
@@ -70,9 +61,9 @@ namespace SalaryCalculator.Controllers
                 ws.Cells[string.Format("A{0}", rowStart)].Value = salary.PersonEmail;
                 ws.Cells[string.Format("B{0}", rowStart)].Value = salary.GrossSalary;
                 ws.Cells[string.Format("C{0}", rowStart)].Value = salary.NetSalary;
+                ws.Cells[string.Format("D{0}", rowStart)].Value = salary.DateCheck.ToString();
                 ws.Row(rowStart).Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml(string.Format("pink")));
 
-                // ws.Cells[string.Format("MM/dd/yyyy HH:mm")].Value = DateTime.Now;
                 rowStart++;
             }
 

@@ -6,7 +6,7 @@ namespace SalaryCalculator.Data.Models
 {
     public class User : IdentityUser
     {
-        public ICollection<BulgarianSalary> Salaries { get; set; } = new HashSet<BulgarianSalary>();
+        public ICollection<Salary> Salaries { get; set; } = new HashSet<Salary>();
 
     }
 }

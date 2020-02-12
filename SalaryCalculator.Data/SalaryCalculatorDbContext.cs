@@ -16,11 +16,11 @@ namespace SalaryCalculator.Data
         {
         }
 
-        public DbSet<BulgarianSalary> Salaries { get; set; }
+        public DbSet<Salary> Salaries { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfiguration<User>(new UserConfigurations());
-            builder.ApplyConfiguration<BulgarianSalary>(new BulgariaSalaryConfigurations());
+            builder.ApplyConfiguration<Salary>(new SalaryConfigurations());
 
 
             builder.UserRoleSeeder();

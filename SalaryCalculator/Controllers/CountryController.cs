@@ -12,9 +12,9 @@ namespace SalaryCalculator.Web.Controllers
 {
     public class CountryController : Controller
     {
-        private readonly IBulgariaSalaryService salaryService;
+        private readonly ISalaryService salaryService;
 
-        public CountryController(IBulgariaSalaryService salaryService)
+        public CountryController(ISalaryService salaryService)
         {
             this.salaryService = salaryService;
         }
@@ -48,10 +48,8 @@ namespace SalaryCalculator.Web.Controllers
             {
                 return View(model);
             }
-
-
-            await this.salaryService.CreateBulgariaSalaryAsync(model.PersonEmail, model.GrossSalary);
-            Log.Information("Entered gross salary");
+            await this.salaryService.CreateSalaryAsync(model.PersonEmail, model.GrossSalary);
+            Log.Information($"User with email: {model.PersonEmail} convert gross salary: {model.GrossSalary}");
             return RedirectToAction(nameof(Bulgaria));
         }
 

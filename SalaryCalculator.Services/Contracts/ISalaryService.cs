@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace SalaryCalculator.Services.Contracts
 {
-    public interface IBulgariaSalaryService
+    public interface ISalaryService
     {
-        Task<BulgarianSalary> CreateBulgariaSalaryAsync(string email, decimal grossSalary);
+        Task<Salary> CreateSalaryAsync(string email, decimal grossSalary);
     }
 }

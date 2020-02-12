@@ -9,18 +9,18 @@ using System.Threading.Tasks;
 
 namespace SalaryCalculator.Services.Services
 {
-    public class GermanService : IGermanyService
-    {
-        private readonly SalaryCalculatorDbContext salaryContext;
-        private readonly IUserService userService;
-        private readonly IValidator validator;
+    //public class GermanService : IGermanyService
+    //{
+    //    private readonly SalaryCalculatorDbContext salaryContext;
+    //    private readonly IUserService userService;
+    //    private readonly IValidator validator;
 
-        public GermanService(SalaryCalculatorDbContext salaryContext, IUserService userService, IValidator validator)
-        {
-            this.salaryContext = salaryContext;
-            this.userService = userService;
-            this.validator = validator;
-        }
+    //    public GermanService(SalaryCalculatorDbContext salaryContext, IUserService userService, IValidator validator)
+    //    {
+    //        this.salaryContext = salaryContext;
+    //        this.userService = userService;
+    //        this.validator = validator;
+    //    }
 
         //public async Task<GermanySalary> CreateGermanySalaryAsync(string email, decimal grossSalary)
         //{
@@ -59,17 +59,11 @@ namespace SalaryCalculator.Services.Services
         //    return grossSalary * ServicesConstants.UnemploymentInGerman;
         //}
 
-        //private decimal GetHealthInsuranceTax(decimal grossSalary)
-        //{
-        //    this.validator.IsGrossSalaryInRange(grossSalary);
-        //    return grossSalary * ServicesConstants.HealthInsuranceInGerman;
-        //}
-
         //private decimal GetNursingCareTax(decimal grossSalary)
         //{
         //    this.validator.IsGrossSalaryInRange(grossSalary);
         //    return grossSalary * ServicesConstants.NursingCareInGerman;
         //}
 
-    }
+   // }
 }
