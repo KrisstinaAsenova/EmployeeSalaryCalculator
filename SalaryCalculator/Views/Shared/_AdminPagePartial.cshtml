@@ -1,14 +1,5 @@
 ﻿@model IEnumerable<SalaryCalculator.Web.Models.SalaryViewModel>
 
-@*@{Html.BeginForm("CreateDocument", "Export", FormMethod.Get);
-    {
-        <div>
-            <input type="submit" value="Create Document" style="width:150px;height:27px" />
-        </div>
-    }
-    Html.EndForm();
-}*@
-
 <div class="container">
     <table class="table table-responsive">
         <thead>
@@ -29,5 +20,6 @@
             }
         </tbody>
     </table>
-    <a href="@Url.Action("ExportToExcel", "Export")">Export Excel</a>
+    <a href="@Url.Action("ExportToExcel", "Home")">Export Excel</a>
 </div>
+

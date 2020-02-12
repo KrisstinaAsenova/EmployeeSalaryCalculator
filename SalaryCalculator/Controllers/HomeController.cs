@@ -10,6 +10,7 @@ using SalaryCalculator.Data;
 using SalaryCalculator.Models;
 using SalaryCalculator.Services.Contracts;
 using SalaryCalculator.Web.Models;
+using static Microsoft.AspNetCore.Hosting.Internal.HostingApplication;
 
 namespace SalaryCalculator.Controllers
 {
@@ -25,6 +26,7 @@ namespace SalaryCalculator.Controllers
             this.salaryService = salaryService;
             this.context = context;
         }
+
         public IActionResult Index()
         {
             var salaryList = this.context
@@ -70,22 +72,10 @@ namespace SalaryCalculator.Controllers
 
             Response.Clear();
             Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-            //Response.AddHeader("content-disposition", "attachment: filename=" + "ExcelReport.xlsx");
-            //Response.BinaryWrite(pack.GetAsByteArray());
-            //Response.End();
-
-
+            Response.Headers.Add("content-disposition", "attachment: filename=" + "ExcelReport.xlsx");
+            Response.Body.Write(pack.GetAsByteArray());
+            Response.Body.Close();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
     }
 }

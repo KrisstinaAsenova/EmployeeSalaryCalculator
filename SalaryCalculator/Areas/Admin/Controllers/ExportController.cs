@@ -12,7 +12,7 @@ using SalaryCalculator.Web.Models;
 using System.Web;
 using Microsoft.Azure.Amqp.Framing;
 
-namespace SalaryCalculator.Web.Controllers
+namespace SalaryCalculator.Areas.Admin.Controllers
 {
     public class ExportController : Controller
     {
@@ -54,7 +54,7 @@ namespace SalaryCalculator.Web.Controllers
         //    ExcelPackage pack = new ExcelPackage();
 
         //    ExcelWorksheet ws = pack.Workbook.Worksheets.Add("Report");
-            
+
         //    ws.Cells["A1"].Value = "Email";
         //    ws.Cells["B1"].Value = "GrossSalary";
         //    ws.Cells["C1"].Value = "NetSalary";

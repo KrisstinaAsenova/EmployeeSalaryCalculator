@@ -6,45 +6,12 @@
     ViewData["Title"] = "Home Page";
 }
 
-@model IEnumerable<SalaryCalculator.Web.Models.SalaryViewModel>
-@*@{Html.BeginForm("CreateDocument", "Export", FormMethod.Get);
-        {
-            <div>
-                <input type="submit" value="Create Document" style="width:150px;height:27px" />
-            </div>
-        }
-        Html.EndForm();
-    }*@
-
-<div class="container">
-    <table class="table table-responsive">
-        <thead>
-            <tr>
-                <th>Email</th>
-                <th>GrossSalary</th>
-                <th>NetSalary</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var salary in Model)
-            {
-                <tr>
-                    <td>@salary.PersonEmail</td>
-                    <td>@salary.GrossSalary</td>
-                    <td>@salary.NetSalary</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-    <a href="@Url.Action("ExportToExcel", "Home")">Export Excel</a>
-</div>
-
-@*@if (SignInManager.IsSignedIn(User))
+@if (SignInManager.IsSignedIn(User))
     {
         <partial name="_AdminPagePartial" />
     }
     else
     {
         <partial name="_UserPagePartial" />
-    }*@
+    }
 
