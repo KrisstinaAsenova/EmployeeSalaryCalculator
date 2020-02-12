@@ -1,10 +1,12 @@
 ﻿using System.Drawing;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OfficeOpenXml;
 using SalaryCalculator.Data;
 using SalaryCalculator.Web.Models;
+using Serilog;
 
 namespace SalaryCalculator.Controllers
 {
@@ -27,12 +29,14 @@ namespace SalaryCalculator.Controllers
                     DateCheck = x.DateCheck,
                     PersonEmail = x.PersonEmail,
                     GrossSalary = x.GrossSalary,
+                    Tax = x.Tax,
                     NetSalary = x.NetSalary
                 }).ToList();
 
             return View(salaryList);
         }
 
+        [Authorize]
         public void ExportToExcel()
         {
             var salaryList = this.context
@@ -42,6 +46,7 @@ namespace SalaryCalculator.Controllers
                     DateCheck = x.DateCheck,
                     PersonEmail = x.PersonEmail,
                     GrossSalary = x.GrossSalary,
+                    Tax = x.Tax,
                     NetSalary = x.NetSalary
                 }).ToList();
 
@@ -53,7 +58,7 @@ namespace SalaryCalculator.Controllers
             ws.Cells["B1"].Value = "GrossSalary";
             ws.Cells["C1"].Value = "NetSalary";
             ws.Cells["D1"].Value = "Date";
-            
+
             int rowStart = 2;
             foreach (var salary in salaryList)
             {
@@ -73,6 +78,5 @@ namespace SalaryCalculator.Controllers
             Response.Body.Write(pack.GetAsByteArray());
             Response.Body.Close();
         }
-
     }
 }

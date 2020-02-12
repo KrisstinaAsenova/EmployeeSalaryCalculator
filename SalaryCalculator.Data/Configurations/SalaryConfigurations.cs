@@ -19,9 +19,21 @@ namespace SalaryCalculator.Data.Configurations
                 .WithMany(user => user.Salaries)
                 .HasForeignKey(s => s.UserId);
 
-            //builder
-            //   .HasMany<SalaryCategory>(user => user.Categories)
-            //   .WithOne(s => s.Salary);
+            builder
+                .Property(s => s.PersonEmail)
+                .IsRequired();
+
+            builder
+                .Property(s => s.GrossSalary)
+                .IsRequired();
+
+            builder
+                .Property(s => s.NetSalary)
+                .IsRequired();
+
+            builder
+               .Property(s => s.Tax)
+               .IsRequired();
         }
     }
 }

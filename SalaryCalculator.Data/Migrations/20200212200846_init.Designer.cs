@@ -10,8 +10,8 @@ using SalaryCalculator.Data;
 namespace SalaryCalculator.Data.Migrations
 {
     [DbContext(typeof(SalaryCalculatorDbContext))]
-    [Migration("20200212145058_initial")]
-    partial class initial
+    [Migration("20200212200846_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -48,7 +48,7 @@ namespace SalaryCalculator.Data.Migrations
                         new
                         {
                             Id = "93ad4deb-b9f7-4a98-9585-8b79963aee55",
-                            ConcurrencyStamp = "12aab883-7dee-4e6f-a4a7-37f0aebe8e70",
+                            ConcurrencyStamp = "e150ce57-ffae-4b58-a35e-b0e505b17e85",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -153,7 +153,8 @@ namespace SalaryCalculator.Data.Migrations
 
             modelBuilder.Entity("SalaryCalculator.Data.Models.Salary", b =>
                 {
-                    b.Property<Guid>("SalaryId");
+                    b.Property<Guid>("SalaryId")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("DateCheck");
 
@@ -163,7 +164,8 @@ namespace SalaryCalculator.Data.Migrations
                     b.Property<decimal>("NetSalary")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("PersonEmail");
+                    b.Property<string>("PersonEmail")
+                        .IsRequired();
 
                     b.Property<decimal>("Tax")
                         .HasColumnType("decimal(18,2)");
@@ -232,13 +234,13 @@ namespace SalaryCalculator.Data.Migrations
                         {
                             Id = "e05be19e-09ef-428c-9bcc-cf5ebdf7c56e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "36d00c56-c436-408b-ada1-3bdcdd9d3d6a",
+                            ConcurrencyStamp = "268e2324-dc87-4f4b-abf6-edea161dc3bd",
                             Email = "admin@admin.com",
                             EmailConfirmed = false,
                             LockoutEnabled = true,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEI94pe5zpT57lN5KaVXG1CqsByVqJOAUJJvJZv5tXPO+xORjibvMOhYuZDar+VnXxg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECjVB5HbjtON5WwbIldCGq4ePybOltSBQeLO+mAgM6BfDtAWVw20piqh4zEdsQXstA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "7I5VNHIJTSZNOT3KDWKNFUV5PVYBHGXN",
                             TwoFactorEnabled = false,

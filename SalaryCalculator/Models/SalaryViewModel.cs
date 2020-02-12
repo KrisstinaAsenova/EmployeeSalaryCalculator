@@ -10,6 +10,7 @@ namespace SalaryCalculator.Web.Models
         public DateTime DateCheck { get; set; }
         public string PersonEmail { get; set; }
         public decimal GrossSalary { get; set; }
+        public decimal Tax { get; set; }
         public decimal NetSalary { get; set; }
     }
 }

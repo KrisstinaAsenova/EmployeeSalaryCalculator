@@ -40,17 +40,35 @@ namespace SalaryCalculator.Web.Controllers
             return View();
         }
 
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Create(SalaryViewModel model)
+        //{
+        //    try
+        //    {
+        //        if (!ModelState.IsValid)
+        //        {
+        //            return View(model);
+        //        }
+        //        await this.salaryService.CreateSalaryAsync(model.PersonEmail, model.GrossSalary);
+        //        Log.Information($"User with email: {model.PersonEmail} convert gross salary: {model.GrossSalary}");
+        //        return View(model);
+        //    }
+        //    catch
+        //    {
+        //        Log.Error($"User with email: {model.PersonEmail} wasn't converted!");
+        //        return RedirectToAction("Index", "Home");
+        //    }
+        //}
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(SalaryViewModel model)
+        public async Task<decimal> CreateAsync(SalaryViewModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
-            await this.salaryService.CreateSalaryAsync(model.PersonEmail, model.GrossSalary);
+
+            var salary = await this.salaryService.CreateSalaryAsync(model.PersonEmail, model.GrossSalary);
             Log.Information($"User with email: {model.PersonEmail} convert gross salary: {model.GrossSalary}");
-            return RedirectToAction(nameof(Bulgaria));
+            return Math.Round(salary.NetSalary, 2);
         }
 
     }
