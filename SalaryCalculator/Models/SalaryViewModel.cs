@@ -12,5 +12,6 @@ namespace SalaryCalculator.Web.Models
         public decimal GrossSalary { get; set; }
         public decimal Tax { get; set; }
         public decimal NetSalary { get; set; }
+        public string Country { get; set; }
     }
 }

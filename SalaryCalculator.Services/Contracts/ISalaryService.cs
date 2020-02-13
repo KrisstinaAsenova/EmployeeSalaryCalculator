@@ -8,6 +8,6 @@ namespace SalaryCalculator.Services.Contracts
 {
     public interface ISalaryService
     {
-        Task<Salary> CreateSalaryAsync(string email, decimal grossSalary);
+        Task<Salary> CreateSalaryAsync(string email, decimal grossSalary, string country);
     }
 }

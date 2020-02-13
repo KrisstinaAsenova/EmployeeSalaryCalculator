@@ -1,0 +1,73 @@
+﻿@model SalaryCalculator.Web.Models.SalaryViewModel
+
+@if (Model.Country == "Bulgaria")
+{
+    <link href="~/css/bulgaria.css" rel="stylesheet" type="text/css">
+}
+@if (Model.Country == "USA")
+{
+    <link href="~/css/usa.css" rel="stylesheet" type="text/css">
+}
+@if (Model.Country == "Germany")
+{
+    <link href="~/css/germany.css" rel="stylesheet" type="text/css">
+}
+<link href="~/css/country.css" rel="stylesheet" type="text/css">
+
+<div class="container">
+    <div class="card border-0 shadow my-5" style="opacity:0.94">
+        <div class="card-body p-5 amber-text">
+            <h3>Calculate salary in @Model.Country</h3>
+            <hr />
+            <div class="row">
+                <div class="col-md-4">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label class="control-label">Email:</label>
+                        <input id="personemail" class="form-control" />
+                        <span id="emailValidation" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Salary:</label>
+                        <input id="salary" class="form-control" />
+                        <span id="salaryvalidation" class="text-danger"></span>
+                    </div>
+                    <div id="div" style="display:none">
+                        <div class="form-group">
+                            <label class="control-label">Tax:</label>
+                            <input disabled id="tax" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Net Salary:</label>
+                            <input id="netsalary" disabled class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button id="btn" class="btn btn-primary">
+                            Convert to net salary
+                        </button>
+                        <a class="sp" href="javascript:history.go(-1)" title="Returns you back to the previous page.">Go back</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="takecountry" data-value="@Model.Country">
+
+</div>
+
+<script>
+    function gettoken() {
+    var token = '@Html.AntiForgeryToken()';
+    token = $(token).val();
+    return token;
+}
+</script>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
