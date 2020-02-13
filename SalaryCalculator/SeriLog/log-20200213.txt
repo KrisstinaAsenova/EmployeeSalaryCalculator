@@ -748,3 +748,15 @@ System.NullReferenceException: Object reference not set to an instance of an obj
 2020-02-13 18:55:51.124 +02:00 [INF] User with email: kik@abv.bg convert gross salary: 3000 for country: Germany
 2020-02-13 18:56:04.893 +02:00 [INF] User logged in.
 2020-02-13 18:56:13.509 +02:00 [INF] User logged out.
+2020-02-13 19:04:19.506 +02:00 [INF] Starting web host
+2020-02-13 19:04:36.308 +02:00 [INF] User with email: kiki@abv.bg convert gross salary: 3000 for country: USA
+2020-02-13 19:11:46.612 +02:00 [INF] Starting web host
+2020-02-13 19:12:08.709 +02:00 [INF] User with email: kik@abv.bg convert gross salary: 3000 for country: USA
+2020-02-13 19:13:31.690 +02:00 [INF] Starting web host
+2020-02-13 19:13:44.996 +02:00 [INF] User with email: kkas@abv.ng convert gross salary: 3000 for country: USA
+2020-02-13 19:20:50.842 +02:00 [INF] Starting web host
+2020-02-13 19:25:46.288 +02:00 [INF] Starting web host
+2020-02-13 19:26:14.585 +02:00 [INF] Starting web host
+2020-02-13 19:31:49.528 +02:00 [INF] Starting web host
+2020-02-13 19:35:28.128 +02:00 [INF] Starting web host
+2020-02-13 19:36:13.330 +02:00 [INF] Starting web host
