@@ -17,6 +17,7 @@ using SalaryCalculator.Data.Models;
 using SalaryCalculator.Services.Services;
 using SalaryCalculator.Services.Contracts;
 using SalaryCalculator.Services.Utils;
+using SalaryCalculator.Services.Calculation;
 
 namespace SalaryCalculator
 {
@@ -50,6 +51,7 @@ namespace SalaryCalculator
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<ISalaryService, SalaryService>();
             services.AddScoped<IValidator, Validator>();
+            services.AddSingleton<ISalaryCalculatorFactory, SalaryCalculatorFactory>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

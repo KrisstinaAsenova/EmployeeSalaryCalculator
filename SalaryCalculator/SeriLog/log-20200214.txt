@@ -1,0 +1,14 @@
+2020-02-14 00:19:45.552 +02:00 [INF] Starting web host
+2020-02-14 00:20:35.444 +02:00 [INF] User logged out.
+2020-02-14 00:20:42.702 +02:00 [INF] User with email: asd@abv.bg convert gross salary: 3000 for country: USA
+2020-02-14 00:22:17.496 +02:00 [INF] User with email: asd@abv.bg convert gross salary: 3000 for country: USA
+2020-02-14 00:22:17.506 +02:00 [INF] User with email: asd@abv.bg convert gross salary: 3000 for country: USA
+2020-02-14 00:22:43.633 +02:00 [INF] Starting web host
+2020-02-14 00:22:57.424 +02:00 [INF] User with email: asd@avb.bg convert gross salary: 3000 for country: USA
+2020-02-14 00:23:22.784 +02:00 [INF] User with email: qwe@abv.bg convert gross salary: 3000 for country: Germany
+2020-02-14 00:23:34.646 +02:00 [INF] User with email: asd@abv.bg convert gross salary: 2600 for country: Bulgaria
+2020-02-14 00:23:38.909 +02:00 [INF] User with email: asd@abv.bg convert gross salary: 2700 for country: Bulgaria
+2020-02-14 00:23:41.377 +02:00 [INF] User with email: asd@abv.bg convert gross salary: 3000 for country: Bulgaria
+2020-02-14 00:23:42.652 +02:00 [INF] User with email: asd@abv.bg convert gross salary: 3000 for country: Bulgaria
+2020-02-14 00:24:54.905 +02:00 [INF] User with email: asd@abv.bg convert gross salary: 3000 for country: USA
+2020-02-14 00:26:06.263 +02:00 [INF] User with email: asd@abv.bg convert gross salary: 200000 for country: USA

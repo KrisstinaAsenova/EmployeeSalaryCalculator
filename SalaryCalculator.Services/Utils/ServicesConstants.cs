@@ -12,19 +12,16 @@ namespace SalaryCalculator.Services.Utils
         public const decimal SupplementaryPensionInBulgaria = 0.022M;
         public const decimal CommonDiseasesAndMaternityInBulgaria = 0.014M;
         public const decimal PersonalIncomeTaxInBulgaria = 0.1M;
-        public const decimal TotalInBulgaria = 0.1378M;
         
         public const decimal PensionsInGerman = 0.0935M;
         public const decimal HealthInsuranceInGerman = 0.073M;
         public const decimal UnemploymentInGerman = 0.015M;
         public const decimal NursingCareInGerman = 0.01175M;
         public const decimal SupplementaryContibutionInGerman = 0.011M;
-        public const decimal TotalInGerman = 0.20425M;
 
         public const decimal SocialSecurityInUSA = 0.062M; // PENSION
         public const decimal HealthInsuranceInUSA = 0.0145M;
         public const decimal FederalIncomeTaxInUSA = 0.1M;
         public const decimal CommonDiseasesAndMaternityInUSA = 0.009M;
-        public const decimal TotalInUSA = 0.1855M;
     }
 }

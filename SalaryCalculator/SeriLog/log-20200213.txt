@@ -760,3 +760,50 @@ System.NullReferenceException: Object reference not set to an instance of an obj
 2020-02-13 19:31:49.528 +02:00 [INF] Starting web host
 2020-02-13 19:35:28.128 +02:00 [INF] Starting web host
 2020-02-13 19:36:13.330 +02:00 [INF] Starting web host
+2020-02-13 22:36:08.751 +02:00 [INF] Starting web host
+2020-02-13 22:36:18.835 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'SalaryCalculator.Services.Calculation.ISalaryCalculatorFactory' while attempting to activate 'SalaryCalculator.Services.Services.SalaryService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.CreateServiceAccessor(Type serviceType)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-02-13 22:37:21.113 +02:00 [INF] Starting web host
+2020-02-13 22:37:38.686 +02:00 [INF] User with email: asd@abv.bg convert gross salary: 3000 for country: Bulgaria
+2020-02-13 22:37:44.324 +02:00 [INF] User with email: asd@abv.bg convert gross salary: 3000 for country: Bulgaria
+2020-02-13 22:37:44.881 +02:00 [INF] User with email: asd@abv.bg convert gross salary: 3000 for country: Bulgaria
+2020-02-13 22:37:44.901 +02:00 [INF] User with email: asd@abv.bg convert gross salary: 3000 for country: Bulgaria
+2020-02-13 22:37:45.412 +02:00 [INF] User with email: asd@abv.bg convert gross salary: 3000 for country: Bulgaria
+2020-02-13 22:37:45.772 +02:00 [INF] User with email: asd@abv.bg convert gross salary: 3000 for country: Bulgaria
+2020-02-13 22:38:50.466 +02:00 [INF] User with email: asd@abv.bg convert gross salary: 5000 for country: Bulgaria
+2020-02-13 22:38:56.418 +02:00 [INF] User with email: asd@abv.bg convert gross salary: 1000 for country: Bulgaria
+2020-02-13 22:38:56.851 +02:00 [INF] User with email: asd@abv.bg convert gross salary: 1000 for country: Bulgaria
+2020-02-13 22:39:15.436 +02:00 [INF] User with email: qwe@abv.bg convert gross salary: 5000 for country: USA
+2020-02-13 22:40:22.265 +02:00 [INF] User logged in.
+2020-02-13 22:44:14.527 +02:00 [INF] Starting web host
+2020-02-13 22:44:16.305 +02:00 [INF] User logged out.
+2020-02-13 22:44:51.118 +02:00 [INF] User logged in.
+2020-02-13 22:47:52.107 +02:00 [INF] Starting web host

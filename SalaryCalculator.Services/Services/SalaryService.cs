@@ -1,11 +1,9 @@
 ﻿using SalaryCalculator.Data;
 using SalaryCalculator.Data.Models;
+using SalaryCalculator.Services.Calculation;
 using SalaryCalculator.Services.Contracts;
 using SalaryCalculator.Services.Providers;
-using SalaryCalculator.Services.Utils;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace SalaryCalculator.Services.Services
@@ -15,12 +13,15 @@ namespace SalaryCalculator.Services.Services
         private readonly SalaryCalculatorDbContext salaryContext;
         private readonly IUserService userService;
         private readonly IValidator validator;
+        private readonly ISalaryCalculatorFactory salaryCalculatorFactory;
 
-        public SalaryService(SalaryCalculatorDbContext salaryContext, IUserService userService, IValidator validator)
+        public SalaryService(SalaryCalculatorDbContext salaryContext, IUserService userService,
+            IValidator validator, ISalaryCalculatorFactory salaryCalculatorFactory)
         {
             this.salaryContext = salaryContext;
             this.userService = userService;
             this.validator = validator;
+            this.salaryCalculatorFactory = salaryCalculatorFactory;
         }
 
         public async Task<Salary> CalculateSalaryAsync(string email, decimal grossSalary, string country)
@@ -29,22 +30,9 @@ namespace SalaryCalculator.Services.Services
                 throw new ArgumentException("Invalid email");
 
             var user = await this.userService.CreateUser(email);
-            decimal tax = 0;
-            
-            switch (country)
-            {
-                case "Bulgaria":
-                    var summary = this.GetNetInBulgaria(grossSalary);
-                    var personalIncome = this.GetPersonalIncomeTax(grossSalary, summary);
-                    tax = summary + personalIncome;
-                    break;
-                case "USA":
-                    tax = this.GetNetInUSA(grossSalary);
-                    break;
-                case "Germany":
-                    tax = this.GetNetInGermany(grossSalary);
-                    break;
-            }
+
+            var salaryCalculator = this.salaryCalculatorFactory.GetCalculatorFor(country);
+            var netSalary = salaryCalculator.GetNetSalary(grossSalary);
 
             var salary = new Salary
             {
@@ -53,70 +41,14 @@ namespace SalaryCalculator.Services.Services
                 DateCheck = DateTime.UtcNow,
                 PersonEmail = email,
                 GrossSalary = grossSalary,
-                Tax = tax,
-                NetSalary = grossSalary-tax
+                Tax = grossSalary - netSalary,
+                NetSalary = netSalary
             };
 
             this.salaryContext.Salaries.Add(salary);
             await this.salaryContext.SaveChangesAsync();
 
             return salary;
-        }
-
-        // Use Total %
-        private decimal GetNetInBulgaria(decimal grossSalary)
-        {
-            return grossSalary * ServicesConstants.TotalInBulgaria;
-        }
-        private decimal GetNetInUSA(decimal grossSalary)
-        {
-            return grossSalary * ServicesConstants.TotalInUSA;
-        }
-        private decimal GetNetInGermany(decimal grossSalary)
-        {
-            return grossSalary * ServicesConstants.TotalInGerman;
-        }
-        private decimal GetPersonalIncomeTax(decimal grossSalary, decimal tax)
-        {
-            this.validator.IsGrossSalaryInRange(grossSalary);
-            return (grossSalary - tax) * ServicesConstants.PersonalIncomeTaxInBulgaria;
-        }
-
-        // Helper methods
-        private decimal GetPensionTax(decimal grossSalary)
-        {
-            this.validator.IsGrossSalaryInRange(grossSalary);
-            return grossSalary * ServicesConstants.PensionsInBulgaria;
-        }
-
-        private decimal GetHealthTax(decimal grossSalary)
-        {
-            this.validator.IsGrossSalaryInRange(grossSalary);
-            return grossSalary * ServicesConstants.HealthSecurityInBulgaria;
-        }
-
-        private decimal GetUnemploymentTax(decimal grossSalary)
-        {
-            this.validator.IsGrossSalaryInRange(grossSalary);
-            return grossSalary * ServicesConstants.UnemploymentInBulgaria;
-        }
-
-        private decimal GetSupplementaryTax(decimal grossSalary)
-        {
-            this.validator.IsGrossSalaryInRange(grossSalary);
-            return grossSalary * ServicesConstants.SupplementaryPensionInBulgaria;
-        }
-
-        private decimal GetCommonTax(decimal grossSalary)
-        {
-            this.validator.IsGrossSalaryInRange(grossSalary);
-            return grossSalary * ServicesConstants.CommonDiseasesAndMaternityInBulgaria;
-        }
-
-        private decimal GetNursingCareTax(decimal grossSalary)
-        {
-            this.validator.IsGrossSalaryInRange(grossSalary);
-            return grossSalary * ServicesConstants.NursingCareInGerman;
         }
     }
 }
