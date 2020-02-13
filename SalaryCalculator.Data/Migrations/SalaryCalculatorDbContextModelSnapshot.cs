@@ -46,7 +46,7 @@ namespace SalaryCalculator.Data.Migrations
                         new
                         {
                             Id = "93ad4deb-b9f7-4a98-9585-8b79963aee55",
-                            ConcurrencyStamp = "e150ce57-ffae-4b58-a35e-b0e505b17e85",
+                            ConcurrencyStamp = "794f41d6-0c90-4c3e-b8eb-fa25904b7954",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -154,6 +154,8 @@ namespace SalaryCalculator.Data.Migrations
                     b.Property<Guid>("SalaryId")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Country");
+
                     b.Property<DateTime>("DateCheck");
 
                     b.Property<decimal>("GrossSalary")
@@ -232,13 +234,13 @@ namespace SalaryCalculator.Data.Migrations
                         {
                             Id = "e05be19e-09ef-428c-9bcc-cf5ebdf7c56e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "268e2324-dc87-4f4b-abf6-edea161dc3bd",
+                            ConcurrencyStamp = "14316636-c0f9-428f-948a-3820c1274ea1",
                             Email = "admin@admin.com",
                             EmailConfirmed = false,
                             LockoutEnabled = true,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAECjVB5HbjtON5WwbIldCGq4ePybOltSBQeLO+mAgM6BfDtAWVw20piqh4zEdsQXstA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKeXZPlo9iN0E35EJSLh1ziI/ytigxI1a+tet8FXNNpEGci4GQKkhVxiU/SMgUip+A==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "7I5VNHIJTSZNOT3KDWKNFUV5PVYBHGXN",
                             TwoFactorEnabled = false,

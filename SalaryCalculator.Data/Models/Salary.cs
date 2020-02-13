@@ -31,5 +31,6 @@ namespace SalaryCalculator.Data.Models
         //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public string UserId { get; set; }
         public User User { get; set; }
+        public string Country { get; set; }
     }
 }

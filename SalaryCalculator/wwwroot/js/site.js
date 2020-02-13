@@ -4,9 +4,7 @@
     let salary = document.getElementById('salary').value
     let country = document.getElementById('takecountry').getAttribute('data-value');
     let isEverythingOk = true;
-
     let isvalidemail = validateEmail(email);
-
 
     if (isNaN(salary)) {
         $('#salaryvalidation').text('Please enter valid salary');
@@ -26,7 +24,8 @@
         $('#salaryvalidation').text('Please enter valid salary');
         isEverythingOk = false;
     }
-    if (salary.length >6 ) {
+    if (salary.length >6 
+) {
         $('#salaryvalidation').text('Please enter valid salary');
         isEverythingOk = false;
     }
@@ -57,7 +56,7 @@
             },
             success: function (data) {
                 document.getElementById('netsalary').value = data;
-                document.getElementById('tax').value = Math.round((salary - data) * 100) / 100;
+                document.getElementById('tax').value = Math.round((salary - data) * 100) / 100 ;
             }
 
         })

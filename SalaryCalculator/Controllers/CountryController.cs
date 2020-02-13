@@ -40,7 +40,7 @@ namespace SalaryCalculator.Web.Controllers
         //        {
         //            return View(model);
         //        }
-        //        await this.salaryService.CreateSalaryAsync(model.PersonEmail, model.GrossSalary);
+        //        await this.salaryService.CalculateSalaryAsync(model.PersonEmail, model.GrossSalary);
         //        Log.Information($"User with email: {model.PersonEmail} convert gross salary: {model.GrossSalary}");
         //        return View(model);
         //    }
@@ -55,7 +55,7 @@ namespace SalaryCalculator.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<decimal> CreateAsync(SalaryViewModel model)
         {
-            var salary = await this.salaryService.CreateSalaryAsync(model.PersonEmail, model.GrossSalary,model.Country);
+            var salary = await this.salaryService.CalculateSalaryAsync(model.PersonEmail, model.GrossSalary,model.Country);
             Log.Information($"User with email: {model.PersonEmail} convert gross salary: {model.GrossSalary} for country: {model.Country}");
             return Math.Round(salary.NetSalary, 2);
         }

@@ -4,3 +4,8 @@
 .sp{
     margin-left:6%;
 }
+
+.bt-col {
+    background-color: lightskyblue;
+    color: white;
+}

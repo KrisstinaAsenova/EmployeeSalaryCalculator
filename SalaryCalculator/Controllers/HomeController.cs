@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using OfficeOpenXml;
 using SalaryCalculator.Data;
 using SalaryCalculator.Web.Models;
-using Serilog;
 
 namespace SalaryCalculator.Controllers
 {
@@ -26,6 +25,7 @@ namespace SalaryCalculator.Controllers
                 .Salaries
                 .Select(x => new SalaryViewModel
                 {
+                    Country = x.Country,
                     DateCheck = x.DateCheck,
                     PersonEmail = x.PersonEmail,
                     GrossSalary = x.GrossSalary,
@@ -43,6 +43,7 @@ namespace SalaryCalculator.Controllers
                 .Salaries
                 .Select(x => new SalaryViewModel
                 {
+                    Country = x.Country,
                     DateCheck = x.DateCheck,
                     PersonEmail = x.PersonEmail,
                     GrossSalary = x.GrossSalary,
@@ -58,6 +59,7 @@ namespace SalaryCalculator.Controllers
             ws.Cells["B1"].Value = "GrossSalary";
             ws.Cells["C1"].Value = "NetSalary";
             ws.Cells["D1"].Value = "Date";
+            ws.Cells["E1"].Value = "Country";
 
             int rowStart = 2;
             foreach (var salary in salaryList)
@@ -67,6 +69,7 @@ namespace SalaryCalculator.Controllers
                 ws.Cells[string.Format("B{0}", rowStart)].Value = salary.GrossSalary;
                 ws.Cells[string.Format("C{0}", rowStart)].Value = salary.NetSalary;
                 ws.Cells[string.Format("D{0}", rowStart)].Value = salary.DateCheck.ToString();
+                ws.Cells[string.Format("E{0}", rowStart)].Value = salary.Country;
                 ws.Row(rowStart).Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml(string.Format("pink")));
 
                 rowStart++;
