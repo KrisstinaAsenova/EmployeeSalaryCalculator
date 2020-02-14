@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace SalaryCalculator.Data.Models
 {
@@ -26,11 +24,14 @@ namespace SalaryCalculator.Data.Models
         [Column(TypeName = "decimal(18,2)")]
         public decimal NetSalary { get; set; }
 
+        [Required]
         public DateTime DateCheck { get; set; }
 
         //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public string UserId { get; set; }
         public User User { get; set; }
+
+        [Required]
         public string Country { get; set; }
     }
 }

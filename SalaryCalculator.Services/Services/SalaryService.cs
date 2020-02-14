@@ -1,8 +1,7 @@
 ﻿using SalaryCalculator.Data;
 using SalaryCalculator.Data.Models;
-using SalaryCalculator.Services.Calculation;
 using SalaryCalculator.Services.Contracts;
-using SalaryCalculator.Services.Providers;
+using Serilog;
 using System;
 using System.Threading.Tasks;
 
@@ -26,10 +25,12 @@ namespace SalaryCalculator.Services.Services
 
         public async Task<Salary> CalculateSalaryAsync(string email, decimal grossSalary, string country)
         {
-            if (!RegexUtilities.IsValidEmail(email))
-                throw new ArgumentException("Invalid email");
+            Log.Verbose($"Call was made to CalculateSalaryAsync with email: {email}, grossSalaty: {grossSalary} from {country}");
 
-            var user = await this.userService.CreateUser(email);
+            this.validator.IsValidEmail(email);
+            this.validator.IsGrossSalaryInRange(grossSalary);
+
+            var user = await this.userService.CreateUserAsync(email);
 
             var salaryCalculator = this.salaryCalculatorFactory.GetCalculatorFor(country);
             var netSalary = salaryCalculator.GetNetSalary(grossSalary);

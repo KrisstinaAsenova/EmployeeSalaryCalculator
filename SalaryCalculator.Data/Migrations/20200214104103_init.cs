@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SalaryCalculator.Data.Migrations
 {
-    public partial class initial : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -180,12 +180,12 @@ namespace SalaryCalculator.Data.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "93ad4deb-b9f7-4a98-9585-8b79963aee55", "794f41d6-0c90-4c3e-b8eb-fa25904b7954", "Admin", "ADMIN" });
+                values: new object[] { "93ad4deb-b9f7-4a98-9585-8b79963aee55", "3308cd47-192f-4116-bf62-dc8055fe01ed", "Admin", "ADMIN" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "e05be19e-09ef-428c-9bcc-cf5ebdf7c56e", 0, "14316636-c0f9-428f-948a-3820c1274ea1", "admin@admin.com", false, true, null, "ADMIN@ADMIN.COM", "ADMIN", "AQAAAAEAACcQAAAAEKeXZPlo9iN0E35EJSLh1ziI/ytigxI1a+tet8FXNNpEGci4GQKkhVxiU/SMgUip+A==", null, false, "7I5VNHIJTSZNOT3KDWKNFUV5PVYBHGXN", false, "admin" });
+                values: new object[] { "e05be19e-09ef-428c-9bcc-cf5ebdf7c56e", 0, "c4121d1a-455a-47f6-afb6-8c45364413ff", "admin@admin.com", false, true, null, "ADMIN@ADMIN.COM", "ADMIN", "AQAAAAEAACcQAAAAEErMU7c/Im4e/rH0Jf9TILV/8iPcUF+yn2T/OHP65AJ95oaA0FNFltpaoq0bWSVhMw==", null, false, "7I5VNHIJTSZNOT3KDWKNFUV5PVYBHGXN", false, "admin" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",

@@ -34,6 +34,14 @@ namespace SalaryCalculator.Data.Configurations
             builder
                .Property(s => s.Tax)
                .IsRequired();
+
+            builder
+              .Property(s => s.DateCheck)
+              .IsRequired();
+
+            builder
+              .Property(s => s.Country)
+              .IsRequired();
         }
     }
 }

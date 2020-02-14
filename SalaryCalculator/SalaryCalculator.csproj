@@ -23,10 +23,4 @@
     <ProjectReference Include="..\SalaryCalculator.Services\SalaryCalculator.Services.csproj" />
   </ItemGroup>
 
-
-  <ItemGroup>
-    <Folder Include="Areas\Admin\Controllers\" />
-    <Folder Include="Areas\Admin\Views\" />
-  </ItemGroup>
-
 </Project>

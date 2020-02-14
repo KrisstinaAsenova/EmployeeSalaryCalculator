@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SalaryCalculator.Services.Contracts;
+using System;
 
 namespace SalaryCalculator.Services.Calculation
 {
     public class SalaryCalculatorFactory : ISalaryCalculatorFactory
     {
-        public SalaryCalculator GetCalculatorFor(string country)
+        public ISalaryCalculator GetCalculatorFor(string country)
         {
             switch(country)
             {

@@ -10,8 +10,8 @@ using SalaryCalculator.Data;
 namespace SalaryCalculator.Data.Migrations
 {
     [DbContext(typeof(SalaryCalculatorDbContext))]
-    [Migration("20200213154917_initial")]
-    partial class initial
+    [Migration("20200214104103_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -48,7 +48,7 @@ namespace SalaryCalculator.Data.Migrations
                         new
                         {
                             Id = "93ad4deb-b9f7-4a98-9585-8b79963aee55",
-                            ConcurrencyStamp = "794f41d6-0c90-4c3e-b8eb-fa25904b7954",
+                            ConcurrencyStamp = "3308cd47-192f-4116-bf62-dc8055fe01ed",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -236,13 +236,13 @@ namespace SalaryCalculator.Data.Migrations
                         {
                             Id = "e05be19e-09ef-428c-9bcc-cf5ebdf7c56e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "14316636-c0f9-428f-948a-3820c1274ea1",
+                            ConcurrencyStamp = "c4121d1a-455a-47f6-afb6-8c45364413ff",
                             Email = "admin@admin.com",
                             EmailConfirmed = false,
                             LockoutEnabled = true,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEKeXZPlo9iN0E35EJSLh1ziI/ytigxI1a+tet8FXNNpEGci4GQKkhVxiU/SMgUip+A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEErMU7c/Im4e/rH0Jf9TILV/8iPcUF+yn2T/OHP65AJ95oaA0FNFltpaoq0bWSVhMw==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "7I5VNHIJTSZNOT3KDWKNFUV5PVYBHGXN",
                             TwoFactorEnabled = false,

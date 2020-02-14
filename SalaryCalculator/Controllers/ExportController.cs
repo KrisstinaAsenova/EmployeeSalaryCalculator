@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OfficeOpenXml;
 using SalaryCalculator.Data;
 using SalaryCalculator.Services.Contracts;
 using SalaryCalculator.Web.Models;
-using System.Web;
-using Microsoft.Azure.Amqp.Framing;
 using System.Drawing;
 using Microsoft.AspNetCore.Authorization;
 
@@ -18,13 +12,9 @@ namespace SalaryCalculator.Controllers
 {
     public class ExportController : Controller
     {
-        private readonly ISalaryService salaryService;
         private readonly SalaryCalculatorDbContext context;
-
-
-        public ExportController(ISalaryService salaryService, SalaryCalculatorDbContext context)
+        public ExportController(SalaryCalculatorDbContext context)
         {
-            this.salaryService = salaryService;
             this.context = context;
         }
 
@@ -62,7 +52,7 @@ namespace SalaryCalculator.Controllers
                 ws.Cells[string.Format("C{0}", rowStart)].Value = salary.NetSalary;
                 ws.Cells[string.Format("D{0}", rowStart)].Value = salary.DateCheck.ToString();
                 ws.Cells[string.Format("E{0}", rowStart)].Value = salary.Country;
-                ws.Row(rowStart).Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml(string.Format("pink")));
+                ws.Row(rowStart).Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml(string.Format("yellow")));
 
                 rowStart++;
             }

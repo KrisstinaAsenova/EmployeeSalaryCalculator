@@ -1,7 +1,4 @@
 ﻿using SalaryCalculator.Services.Utils;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SalaryCalculator.Services.Calculation
 {
@@ -9,42 +6,43 @@ namespace SalaryCalculator.Services.Calculation
     {
         protected override decimal CalculateCommonTax(decimal grossSalary)
         {
-            return grossSalary * ServicesConstants.CommonDiseasesAndMaternityInBulgaria;
+            return grossSalary * TaxConstants.CommonDiseasesAndMaternityInBulgaria;
         }
+
+        protected override decimal CalculatePensionsTax(decimal grossSalary)
+        {
+            return grossSalary * TaxConstants.PensionsInBulgaria;
+        }
+
+        protected override decimal CalculatePersonalIncomeTax(decimal netSalary)
+        {
+            return netSalary * TaxConstants.PersonalIncomeTaxInBulgaria;
+        }
+
+        protected override decimal CalculateSupplementaryTax(decimal grossSalary)
+        {
+            return grossSalary * TaxConstants.SupplementaryPensionInBulgaria;
+        }
+
+        protected override decimal CalculateUnemploymentTax(decimal grossSalary)
+        {
+            return grossSalary * TaxConstants.UnemploymentInBulgaria;
+        }
+
+        protected override decimal CalculateHealthTax(decimal grossSalary)
+        {
+            return grossSalary * TaxConstants.HealthSecurityInBulgaria;
+        }
+
 
         protected override decimal CalculateFederalIncomeTax(decimal grossSalary)
         {
             return 0;
         }
 
-        protected override decimal CalculateHealthTax(decimal grossSalary)
-        {
-            return grossSalary * ServicesConstants.HealthSecurityInBulgaria;
-        }
-
         protected override decimal CalculateNursingCareTax(decimal grossSalary)
         {
             return 0;
-        }
-
-        protected override decimal CalculatePensionsTax(decimal grossSalary)
-        {
-            return grossSalary * ServicesConstants.PensionsInBulgaria;
-        }
-
-        protected override decimal CalculatePersonalIncomeTax(decimal netSalary)
-        {
-            return netSalary * ServicesConstants.PersonalIncomeTaxInBulgaria;
-        }
-
-        protected override decimal CalculateSupplementaryTax(decimal grossSalary)
-        {
-            return grossSalary * ServicesConstants.SupplementaryPensionInBulgaria;
-        }
-
-        protected override decimal CalculateUnemploymentTax(decimal grossSalary)
-        {
-            return grossSalary * ServicesConstants.UnemploymentInBulgaria;
         }
     }
 }

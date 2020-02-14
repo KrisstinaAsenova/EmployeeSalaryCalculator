@@ -1,7 +1,4 @@
-﻿using SalaryCalculator.Services.Utils;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SalaryCalculator.Services.Contracts;
 
 namespace SalaryCalculator.Services.Calculation
 {

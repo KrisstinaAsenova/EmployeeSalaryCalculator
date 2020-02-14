@@ -6,27 +6,27 @@ namespace SalaryCalculator.Services.Calculation
     {
         protected override decimal CalculateCommonTax(decimal grossSalary)
         {
-            return ServicesConstants.CommonDiseasesAndMaternityInUSA;
+            return TaxConstants.CommonDiseasesAndMaternityInUSA;
         }
 
         protected override decimal CalculateFederalIncomeTax(decimal grossSalary)
         {
-            return grossSalary * ServicesConstants.FederalIncomeTaxInUSA;   
+            return grossSalary * TaxConstants.FederalIncomeTaxInUSA;   
         }
 
         protected override decimal CalculateHealthTax(decimal grossSalary)
         {
-            return grossSalary * ServicesConstants.HealthInsuranceInUSA;
+            return grossSalary * TaxConstants.HealthInsuranceInUSA;
+        }
+
+        protected override decimal CalculatePensionsTax(decimal grossSalary)
+        {
+            return grossSalary * TaxConstants.SocialSecurityInUSA;
         }
 
         protected override decimal CalculateNursingCareTax(decimal grossSalary)
         {
             return 0;
-        }
-
-        protected override decimal CalculatePensionsTax(decimal grossSalary)
-        {
-            return grossSalary * ServicesConstants.SocialSecurityInUSA;
         }
 
         protected override decimal CalculatePersonalIncomeTax(decimal salary)

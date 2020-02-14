@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SalaryCalculator.Services.Contracts
+﻿namespace SalaryCalculator.Services.Contracts
 {
     public interface IValidator
     {
         void IsGrossSalaryInRange(decimal grossSalary);
+        void IsValidEmail(string email);
     }
 }

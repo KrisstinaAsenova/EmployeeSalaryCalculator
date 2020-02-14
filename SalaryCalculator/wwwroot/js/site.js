@@ -47,7 +47,7 @@
 
         $.ajax({
             type: 'post',
-            url: 'Country/CreateAsync',
+            url: 'Country/CalculateAsync',
             data: {
                 __RequestVerificationToken: gettoken(),
                 PersonEmail: email,

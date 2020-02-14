@@ -1,4 +1,5 @@
 ﻿using SalaryCalculator.Services.Contracts;
+using SalaryCalculator.Services.Providers;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,6 +14,12 @@ namespace SalaryCalculator.Services.Utils
             {
                 throw new ArgumentException("Gross salary can not be 0 or negative!");
             }
+        }
+
+        public void IsValidEmail(string email)
+        {
+            if (!RegexUtilities.IsValidEmail(email))
+                throw new ArgumentException("Invalid email");
         }
     }
 }

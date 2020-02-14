@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SalaryCalculator.Services.Utils
+﻿namespace SalaryCalculator.Services.Utils
 {
-    public static class ServicesConstants
+    public static class TaxConstants
     {
         public const decimal PensionsInBulgaria = 0.0658M;
         public const decimal HealthSecurityInBulgaria = 0.032M;

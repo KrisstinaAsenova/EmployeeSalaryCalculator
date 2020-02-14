@@ -2,10 +2,7 @@
 using SalaryCalculator.Data;
 using SalaryCalculator.Data.Models;
 using SalaryCalculator.Services.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using Serilog;
 using System.Threading.Tasks;
 
 namespace SalaryCalculator.Services.Services
@@ -18,9 +15,11 @@ namespace SalaryCalculator.Services.Services
             this.salaryContext = salaryContext;
         }
 
-        public async Task<User> CreateUser(string email)
+        public async Task<User> CreateUserAsync(string email)
         {
-            var user = await this.FindUser(email);
+            Log.Verbose($"Call was made to CreateUser with email: {email}");
+
+            var user = await this.FindUserAsync(email);
             if( user == null )
             {
                 var userToAdd = new User { Email = email };
@@ -33,7 +32,7 @@ namespace SalaryCalculator.Services.Services
             return user;
         }
 
-        public async Task<User> FindUser(string email)
+        public async Task<User> FindUserAsync(string email)
         {
             return await this.salaryContext.Users.FirstOrDefaultAsync(x => x.Email == email);
         }
