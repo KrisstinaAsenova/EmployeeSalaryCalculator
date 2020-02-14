@@ -5,7 +5,7 @@
 Develop a website that provides salary calculator functionality. End users should be able to calculate their net salary (in Bulgaria, Germany or USA) by submitting their gross salary and their email. The system should persist/log all salary checks. Power users should be able to export the salary check report in Excel. 
 
 #### Technologies used: 
-   - .NET Core 2.2
+   - ASP.NET Core MVC 
    - Entity Framework Core 2.2.6
    - SQL Server 
    - Visual Studio 2019 Community
@@ -36,5 +36,5 @@ Power user have permissions to export the salary check report.
 
 #### Credentials:
 
-Username: admin
-Password: admin123
+   - Username: admin
+   - Password: admin123

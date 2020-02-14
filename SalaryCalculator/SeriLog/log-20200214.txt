@@ -21,3 +21,8 @@
 2020-02-14 14:14:15.779 +02:00 [INF] User logged out.
 2020-02-14 14:14:48.533 +02:00 [INF] User with email: asd@abv.bg convert gross salary: 2000 for country: Bulgaria
 2020-02-14 14:14:56.268 +02:00 [INF] User logged in.
+2020-02-14 14:32:16.541 +02:00 [INF] Starting web host
+2020-02-14 14:32:32.972 +02:00 [INF] User logged out.
+2020-02-14 14:32:56.116 +02:00 [INF] User with email: asdf@abv.bg convert gross salary: 3000 for country: Bulgaria
+2020-02-14 14:33:13.470 +02:00 [INF] User with email: qwe@abv.bg convert gross salary: 2000 for country: USA
+2020-02-14 14:33:47.378 +02:00 [INF] User with email: kiki@abv.bg convert gross salary: 2000 for country: Germany
