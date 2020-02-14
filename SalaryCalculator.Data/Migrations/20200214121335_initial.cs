@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SalaryCalculator.Data.Migrations
 {
-    public partial class init : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -164,7 +164,7 @@ namespace SalaryCalculator.Data.Migrations
                     NetSalary = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     DateCheck = table.Column<DateTime>(nullable: false),
                     UserId = table.Column<string>(nullable: true),
-                    Country = table.Column<string>(nullable: true)
+                    Country = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -180,12 +180,12 @@ namespace SalaryCalculator.Data.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "93ad4deb-b9f7-4a98-9585-8b79963aee55", "3308cd47-192f-4116-bf62-dc8055fe01ed", "Admin", "ADMIN" });
+                values: new object[] { "93ad4deb-b9f7-4a98-9585-8b79963aee55", "0bc34b16-5000-45d7-aad5-d78ec9f155c8", "Admin", "ADMIN" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "e05be19e-09ef-428c-9bcc-cf5ebdf7c56e", 0, "c4121d1a-455a-47f6-afb6-8c45364413ff", "admin@admin.com", false, true, null, "ADMIN@ADMIN.COM", "ADMIN", "AQAAAAEAACcQAAAAEErMU7c/Im4e/rH0Jf9TILV/8iPcUF+yn2T/OHP65AJ95oaA0FNFltpaoq0bWSVhMw==", null, false, "7I5VNHIJTSZNOT3KDWKNFUV5PVYBHGXN", false, "admin" });
+                values: new object[] { "e05be19e-09ef-428c-9bcc-cf5ebdf7c56e", 0, "98bdbba5-272c-40db-a474-99168b57a5d3", "admin@admin.com", false, true, null, "ADMIN@ADMIN.COM", "ADMIN", "AQAAAAEAACcQAAAAEM65QgtJ97DCbvJDSFfixKegNBMda+YGx24JtAAqvoJ2zfdSLNhvmJM0gz1RFuDWMw==", null, false, "7I5VNHIJTSZNOT3KDWKNFUV5PVYBHGXN", false, "admin" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",

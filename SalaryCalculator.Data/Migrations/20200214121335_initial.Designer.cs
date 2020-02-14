@@ -10,8 +10,8 @@ using SalaryCalculator.Data;
 namespace SalaryCalculator.Data.Migrations
 {
     [DbContext(typeof(SalaryCalculatorDbContext))]
-    [Migration("20200214104103_init")]
-    partial class init
+    [Migration("20200214121335_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -48,7 +48,7 @@ namespace SalaryCalculator.Data.Migrations
                         new
                         {
                             Id = "93ad4deb-b9f7-4a98-9585-8b79963aee55",
-                            ConcurrencyStamp = "3308cd47-192f-4116-bf62-dc8055fe01ed",
+                            ConcurrencyStamp = "0bc34b16-5000-45d7-aad5-d78ec9f155c8",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -156,7 +156,8 @@ namespace SalaryCalculator.Data.Migrations
                     b.Property<Guid>("SalaryId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Country");
+                    b.Property<string>("Country")
+                        .IsRequired();
 
                     b.Property<DateTime>("DateCheck");
 
@@ -236,13 +237,13 @@ namespace SalaryCalculator.Data.Migrations
                         {
                             Id = "e05be19e-09ef-428c-9bcc-cf5ebdf7c56e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c4121d1a-455a-47f6-afb6-8c45364413ff",
+                            ConcurrencyStamp = "98bdbba5-272c-40db-a474-99168b57a5d3",
                             Email = "admin@admin.com",
                             EmailConfirmed = false,
                             LockoutEnabled = true,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEErMU7c/Im4e/rH0Jf9TILV/8iPcUF+yn2T/OHP65AJ95oaA0FNFltpaoq0bWSVhMw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEM65QgtJ97DCbvJDSFfixKegNBMda+YGx24JtAAqvoJ2zfdSLNhvmJM0gz1RFuDWMw==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "7I5VNHIJTSZNOT3KDWKNFUV5PVYBHGXN",
                             TwoFactorEnabled = false,
